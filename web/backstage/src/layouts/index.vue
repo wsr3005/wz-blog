@@ -45,7 +45,7 @@ export default {
     drawer: null,
     links: [
       ['mdi-home', '页面管理', 'Home'],
-      ['mdi-file-document-edit', '文章分享', '/about'],
+      ['mdi-file-document-edit', '文章分享', 'Documents'],
       ['mdi-toolbox', '资源分享', '/about'],
       ['mdi-account-supervisor', '作者简介', '/about']
     ]

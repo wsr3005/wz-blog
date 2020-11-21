@@ -7,10 +7,22 @@
     </div>
     <v-container class="px-6" fluid>
       <v-row>
+        <!-- 轮播图 -->
+        <v-col cols="12">
+          <v-card class="">
+            <v-card-title>轮播图</v-card-title>
+            <v-card-text>
+              <pic-upload></pic-upload>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <!-- 页脚设置 -->
         <v-col cols="12">
           <v-card>
-            <v-card-title>轮播图</v-card-title>
-            <pic-upload></pic-upload>
+            <v-card-title>页脚</v-card-title>
+            <v-card-text>
+              <footer-edit></footer-edit>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -20,13 +32,15 @@
 
 <script>
 import picUpload from '@/views/HomeSeeting/components/picUpload'
+import footerEdit from '@/views/HomeSeeting/components/footerEdit'
 export default {
   name: 'Home',
   data: () => ({
     filelist: []
   }),
   components: {
-    picUpload
+    picUpload,
+    footerEdit
   }
 }
 </script>
@@ -40,18 +54,5 @@ export default {
       font-size: 1.3em;
     }
   }
-
-  .content {
-    display: flex;
-
-    .pic {
-      margin-right: 10px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
 }
-
 </style>

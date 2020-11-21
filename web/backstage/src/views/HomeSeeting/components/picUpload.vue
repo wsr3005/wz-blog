@@ -11,8 +11,14 @@
       <i class="el-icon-plus"></i>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
-      <img width="100%" :src="dialogImageUrl" alt="">
+      <img width="100%" :src="dialogImageUrl" alt="" />
     </el-dialog>
+    <div class="button-display">
+      <v-btn color="primary" elevation="2" width="100">保存</v-btn>
+      <v-btn style="margin-left: 20px" color="primary" elevation="2" width="100"
+        >发布</v-btn
+      >
+    </div>
   </div>
 </template>
 
@@ -22,13 +28,18 @@ export default {
   data: () => ({
     dialogImageUrl: '',
     dialogVisible: false,
-    fileList: [{
-      name: 'food.jpeg',
-      url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-    }, {
-      name: 'food2.jpeg',
-      url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-    }]
+    fileList: [
+      {
+        name: 'food.jpeg',
+        url:
+          'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+      },
+      {
+        name: 'food2.jpeg',
+        url:
+          'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+      }
+    ]
   }),
   created () {
     setTimeout(() => {
@@ -48,9 +59,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#picUpload{
+
+#picUpload {
   ::v-deep.el-upload--picture-card {
-    margin-bottom: 24px
+    margin-bottom: 24px;
+    &:hover {
+      border-color: #4052b2;
+    }
+  }
+  .button-display {
+    text-align: right;
+    margin-right: 3%;
   }
 }
 </style>

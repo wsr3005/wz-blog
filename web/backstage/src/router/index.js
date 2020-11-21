@@ -9,12 +9,19 @@ const routes = [
     name: 'Layouts',
     component: () => import('../layouts/index.vue'),
     children: [{
-      path: '/home',
+      path: 'home',
       name: 'Home',
       meta: {
         name: '首页管理'
       },
       component: () => import('../views/HomeSeeting/Home.vue')
+    }, {
+      path: 'documents',
+      name: 'Documents',
+      meta: {
+        name: '文章分享'
+      },
+      component: () => import('../views/Documents/index.vue')
     }]
   },
   {
