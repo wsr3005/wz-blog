@@ -8,9 +8,9 @@
     </v-system-bar>
     <!--  侧边栏  -->
     <v-navigation-drawer v-model="drawer" app>
-      <v-sheet color="grey lighten-4" class="pa-4">
+      <v-sheet color="lighten-4" class="pa-4">
         <v-avatar class="mb-4" size="64" tile>
-          <img :src="autorPic">
+          <img src="https://www.yunboys.cn/sjtx/api.php">
         </v-avatar>
         <div class="onekey">{{ oneKey }}</div>
       </v-sheet>

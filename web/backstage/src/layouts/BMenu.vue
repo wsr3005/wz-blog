@@ -21,8 +21,9 @@
           v-for="(item, i) in items"
           :key="i"
           link
+          @click="handelClick(item.title)"
         >
-          <v-list-item-title @click="handelClick(item.title)">{{ item.title }}</v-list-item-title>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>

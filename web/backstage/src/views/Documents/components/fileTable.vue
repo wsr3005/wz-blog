@@ -2,8 +2,8 @@
   <div>
     <v-row>
       <v-col cols="12" align="end">
-        <v-btn color="primary" elevation="2" width="100">+ 新建</v-btn>
-        <v-btn style="margin-left: 20px" color="info" elevation="2" width="100"
+        <v-btn color="primary" elevation="2" width="100" @click="createDocument">+ 新建</v-btn>
+        <v-btn style="margin-left: 20px" color="warning" elevation="2" width="100"
           >删除</v-btn
         >
       </v-col>
@@ -86,6 +86,9 @@ export default {
         }),
         1
       )
+    },
+    createDocument () {
+      this.$router.push('/deditorcreate/-1')
     }
   }
 }

@@ -22,6 +22,10 @@ const routes = [
         name: '文章分享'
       },
       component: () => import('../views/Documents/index.vue')
+    }, {
+      path: 'deditorcreate/:id',
+      name: 'EditorCreate',
+      component: () => import('../views/Documents/editorcreate.vue')
     }]
   },
   {

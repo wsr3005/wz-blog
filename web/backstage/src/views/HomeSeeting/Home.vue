@@ -9,7 +9,7 @@
       <v-row>
         <!-- 轮播图 -->
         <v-col cols="12">
-          <v-card class="">
+          <v-card elevation="5">
             <v-card-title>轮播图</v-card-title>
             <v-card-text>
               <pic-upload></pic-upload>
@@ -18,7 +18,7 @@
         </v-col>
         <!-- 页脚设置 -->
         <v-col cols="12">
-          <v-card>
+          <v-card elevation="5">
             <v-card-title>页脚</v-card-title>
             <v-card-text>
               <footer-edit></footer-edit>
