@@ -90,7 +90,7 @@
           <v-subheader>文章内容</v-subheader>
         </v-col>
         <v-col cols="11">
-          <div id="richEditor" class="mt-4"></div>
+          <rich-editor ref="richeditor"></rich-editor>
         </v-col>
       </v-row>
       <div class="button-display">
@@ -115,8 +115,8 @@
 </template>
 
 <script>
-import E from 'wangeditor'
 import singalUpload from './components/singalUpload'
+import richEditor from '@/components/richEditor'
 export default {
   name: 'index',
   data: () => ({
@@ -141,22 +141,17 @@ export default {
       }
     }
   },
-  mounted () {
-    this.richEditor = new E('#richEditor')
-    this.richEditor.config.height = 500
-    this.richEditor.config.zIndex = 1
-    this.richEditor.create()
-  },
   methods: {
     handelAddTag () {
       alert(123)
     },
     save () {
-      console.log(this.richEditor.txt.html())
+      console.log(this.$refs.richeditor.getHtml())
     }
   },
   components: {
-    singalUpload
+    singalUpload,
+    richEditor
   }
 }
 </script>

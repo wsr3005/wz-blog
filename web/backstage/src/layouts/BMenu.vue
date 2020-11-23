@@ -40,12 +40,16 @@ export default {
     seeting,
     items: [
       { title: '修改个人信息' },
-      { title: '推出' }
+      { title: '退出' }
     ]
   }),
   methods: {
     handelClick (title) {
-      alert(title)
+      if (title === '退出') {
+        this.$router.push('/login')
+      } else {
+        alert(title)
+      }
     }
   }
 }

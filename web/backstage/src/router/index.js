@@ -8,13 +8,21 @@ const routes = [
     path: '/',
     name: 'Layouts',
     component: () => import('../layouts/index.vue'),
+    redirect: '/home',
     children: [{
       path: 'home',
       name: 'Home',
       meta: {
-        name: '首页管理'
+        name: '首页'
       },
-      component: () => import('../views/HomeSeeting/Home.vue')
+      component: () => import('../views/Home.vue')
+    }, {
+      path: 'pagesetting',
+      name: 'PageSetting',
+      meta: {
+        name: '页面管理'
+      },
+      component: () => import('../views/PageSetting/index.vue')
     }, {
       path: 'documents',
       name: 'Documents',
@@ -26,12 +34,20 @@ const routes = [
       path: 'deditorcreate/:id',
       name: 'EditorCreate',
       component: () => import('../views/Documents/editorcreate.vue')
-    }]
+    }, {
+      path: 'author',
+      name: 'Author',
+      meta: {
+        name: '作者介绍'
+      },
+      component: () => import('../views/Author/index.vue')
+    }
+    ]
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
   }
 ]
 

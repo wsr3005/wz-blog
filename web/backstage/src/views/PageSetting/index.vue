@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="index">
     <div class="banner">
       <v-banner class="py-6 px-6">
         <span>{{ $route.meta.name }}</span>
@@ -31,10 +31,10 @@
 </template>
 
 <script>
-import picUpload from '@/views/HomeSeeting/components/picUpload'
-import footerEdit from '@/views/HomeSeeting/components/footerEdit'
+import picUpload from '@/views/PageSetting/components/picUpload'
+import footerEdit from '@/views/PageSetting/components/footerEdit'
 export default {
-  name: 'Home',
+  name: 'index',
   data: () => ({
     filelist: []
   }),
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.index {
   .banner {
     span {
       color: black;

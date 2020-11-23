@@ -16,14 +16,54 @@
       </v-sheet>
       <v-divider></v-divider>
       <v-list>
-        <v-list-item v-for="[icon, text, pathName] in links" :key="icon" link @click="handleClick(pathName)">
+        <v-list-item to="/home">
           <v-list-item-icon>
-            <v-icon>{{ icon }}</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{ text }}</v-list-item-title>
-          </v-list-item-content>
+          <v-list-item-title>首页</v-list-item-title>
         </v-list-item>
+
+        <v-list-group
+          :value="true"
+          prepend-icon="mdi-blogger"
+          no-action
+        >
+          <template v-slot:activator>
+            <v-list-item-title>博客管理</v-list-item-title>
+          </template>
+
+          <v-list-item to="/documents">
+            <v-list-item-title>文章管理</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="">
+            <v-list-item-title>分类管理</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="">
+            <v-list-item-title>标签管理</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
+
+        <v-list-item to="/1">
+          <v-list-item-icon>
+            <v-icon>mdi-account-circle</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>用户管理</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item to="/2">
+          <v-list-item-icon>
+            <v-icon>mdi-toolbox</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>资源管理</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item to="/3">
+          <v-list-item-icon>
+            <v-icon>mdi-file-cog</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>操作日志</v-list-item-title>
+        </v-list-item>
+
       </v-list>
     </v-navigation-drawer>
     <!--  中心区域  -->
@@ -44,10 +84,21 @@ export default {
     oneKey: '',
     drawer: null,
     links: [
-      ['mdi-home', '页面管理', 'Home'],
+      ['mdi-home', '首页', 'Home'],
+      ['mdi-web', '页面管理', 'PageSetting'],
       ['mdi-file-document-edit', '文章分享', 'Documents'],
       ['mdi-toolbox', '资源分享', '/about'],
-      ['mdi-account-supervisor', '作者简介', '/about']
+      ['mdi-account-supervisor', '作者简介', 'Author']
+    ],
+    admins: [
+      ['Management', 'mdi-account-multiple-outline'],
+      ['Settings', 'mdi-cog-outline']
+    ],
+    cruds: [
+      ['Create', 'mdi-plus-outline'],
+      ['Read', 'mdi-file-outline'],
+      ['Update', 'mdi-update'],
+      ['Delete', 'mdi-delete']
     ]
   }),
   created () {
