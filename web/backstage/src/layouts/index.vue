@@ -24,8 +24,8 @@
         </v-list-item>
 
         <v-list-group
-          :value="true"
           prepend-icon="mdi-blogger"
+          color=""
           no-action
         >
           <template v-slot:activator>
@@ -35,7 +35,7 @@
           <v-list-item to="/documents">
             <v-list-item-title>文章管理</v-list-item-title>
           </v-list-item>
-          <v-list-item to="">
+          <v-list-item to="category">
             <v-list-item-title>分类管理</v-list-item-title>
           </v-list-item>
           <v-list-item to="">
@@ -68,7 +68,10 @@
     </v-navigation-drawer>
     <!--  中心区域  -->
     <v-main>
-      <router-view/>
+      <tags-view class="tags-view"></tags-view>
+      <keep-alive :include="cachedViews">
+        <router-view/>
+      </keep-alive>
     </v-main>
   </v-app>
 </template>
@@ -77,30 +80,19 @@
 import BMenu from '@/layouts/BMenu'
 import Identicon from 'identicon.js'
 import axios from 'axios'
+import tagsView from '@/layouts/TagsView/index'
 
 export default {
   data: () => ({
     autorPic: null,
     oneKey: '',
-    drawer: null,
-    links: [
-      ['mdi-home', '首页', 'Home'],
-      ['mdi-web', '页面管理', 'PageSetting'],
-      ['mdi-file-document-edit', '文章分享', 'Documents'],
-      ['mdi-toolbox', '资源分享', '/about'],
-      ['mdi-account-supervisor', '作者简介', 'Author']
-    ],
-    admins: [
-      ['Management', 'mdi-account-multiple-outline'],
-      ['Settings', 'mdi-cog-outline']
-    ],
-    cruds: [
-      ['Create', 'mdi-plus-outline'],
-      ['Read', 'mdi-file-outline'],
-      ['Update', 'mdi-update'],
-      ['Delete', 'mdi-delete']
-    ]
+    drawer: null
   }),
+  computed: {
+    cachedViews () {
+      return this.$store.state.tagsView.cachedViews
+    }
+  },
   created () {
     this.autorPic = 'data:image/png;base64,' + new Identicon(this.createHash(15), {
       foreground: '#4153af',
@@ -128,7 +120,8 @@ export default {
     }
   },
   components: {
-    BMenu
+    BMenu,
+    tagsView
   }
 }
 </script>
@@ -142,6 +135,11 @@ export default {
 
   .onekey {
     font-weight: bold;
+  }
+
+  .tags-view {
+    //position: sticky;
+    //top: 40px;
   }
 }
 

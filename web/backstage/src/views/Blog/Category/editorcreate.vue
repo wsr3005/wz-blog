@@ -118,7 +118,7 @@
 import singalUpload from './components/singalUpload'
 import richEditor from '@/components/richEditor'
 export default {
-  name: 'index',
+  name: 'EditorCreate',
   data: () => ({
     form: {
       title: '',
