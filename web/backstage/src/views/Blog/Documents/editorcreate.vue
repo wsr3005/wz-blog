@@ -8,7 +8,7 @@
     <v-container class="px-10 pt-5" fluid>
       <v-row align="baseline" dense>
         <v-col cols="1">
-          <v-subheader>文章名称</v-subheader>
+          <v-subheader>标题</v-subheader>
         </v-col>
         <v-col cols="3">
           <v-text-field dense hide-details :value="form.title"></v-text-field>
@@ -16,7 +16,7 @@
       </v-row>
       <v-row align="baseline" dense>
         <v-col cols="1">
-          <v-subheader>文章类型</v-subheader>
+          <v-subheader>类型</v-subheader>
         </v-col>
         <v-col cols="3">
           <v-select
@@ -29,7 +29,7 @@
       </v-row>
       <v-row align="baseline" dense>
         <v-col cols="1">
-          <v-subheader>创建时间</v-subheader>
+          <v-subheader>发布时间</v-subheader>
         </v-col>
         <v-col cols="3">
           <v-menu

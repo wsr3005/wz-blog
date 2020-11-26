@@ -3,8 +3,12 @@
 </template>
 
 <script>
+// import echarts from 'echarts'
+import 'echarts-wordcloud/dist/echarts-wordcloud'
+import 'echarts-wordcloud/dist/echarts-wordcloud.min'
+
 export default {
-  name: 'echarts',
+  name: 'echartsWordcloud',
   props: {
     options: {
       type: Object,

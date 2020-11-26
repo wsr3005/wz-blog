@@ -48,7 +48,7 @@ export default {
       if (title === '退出') {
         this.$router.push('/login')
       } else {
-        alert(title)
+        this.$router.push('/author')
       }
     }
   }

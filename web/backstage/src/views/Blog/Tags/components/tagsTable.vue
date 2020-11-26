@@ -21,7 +21,7 @@
         <v-card-text>
            <v-row class="mt-5">
              <v-col>
-               <v-text-field dense hide-details label="类别名称" :value="dialog_content"></v-text-field>
+               <v-text-field dense hide-details label="标签名称" :value="dialog_content"></v-text-field>
              </v-col>
            </v-row>
         </v-card-text>
@@ -64,11 +64,11 @@
 
 <script>
 export default {
-  name: 'footerEdit',
+  name: 'tagsTable',
   data: () => ({
     headers: [
       {
-        text: '分类名称',
+        text: '标签名称',
         value: 'name'
       },
       {
@@ -109,10 +109,10 @@ export default {
     },
     create (index) {
       if (index === -1) {
-        this.dialog_title = '分类新建'
+        this.dialog_title = '标签新建'
         this.dialog_content = ''
       } else {
-        this.dialog_title = '分类编辑'
+        this.dialog_title = '标签编辑'
         this.dialog_content = 'ssss'
       }
       this.dialog = true

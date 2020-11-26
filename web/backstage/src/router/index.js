@@ -51,6 +51,14 @@ const routes = [
       },
       component: () => import('../views/Blog/Category/index.vue')
     }, {
+      path: 'tags',
+      name: 'Tags',
+      meta: {
+        name: '标签管理',
+        noCache: false
+      },
+      component: () => import('../views/Blog/Tags/index.vue')
+    }, {
       path: 'author',
       name: 'Author',
       meta: {

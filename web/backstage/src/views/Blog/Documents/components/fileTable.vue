@@ -35,44 +35,22 @@ export default {
   name: 'footerEdit',
   data: () => ({
     headers: [
-      { text: '文章名称', value: 'name' },
-      { text: '文章类型', value: 'type' },
-      { text: '创建时间', value: 'createtime' },
+      { text: '标题', value: 'title' },
+      { text: '类型', value: 'type' },
       { text: '创建人', value: 'autor' },
+      { text: '发布日期', value: 'publishDate' },
+      { text: '编辑时间', value: 'editTime' },
       { text: '状态', value: 'state' },
       { text: '标签', value: 'tags' },
       { text: '操作', value: 'actions' }
     ],
     desserts: [
       {
-        name: 'Frozen Yogurt',
+        title: 'nginx如何部署',
         type: '前端',
-        createtime: '2020-10-11',
-        autor: 'wyq',
-        state: '已发布',
-        tags: 'nginx'
-      },
-      {
-        name: 'Frozen Yogurt',
-        type: '前端',
-        createtime: '2020-10-11',
-        autor: 'wyq',
-        state: '已发布',
-        tags: 'nginx'
-      },
-      {
-        name: 'Frozen Yogurt',
-        type: '前端',
-        createtime: '2020-10-11',
-        autor: 'wyq',
-        state: '已发布',
-        tags: 'nginx'
-      },
-      {
-        name: 'Frozen Yogurt',
-        type: '前端',
-        createtime: '2020-10-11',
-        autor: 'wyq',
+        autor: '王煜桥',
+        publishDate: '2020-9-11',
+        editTime: '2020-10-26',
         state: '已发布',
         tags: 'nginx'
       }

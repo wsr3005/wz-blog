@@ -10,7 +10,8 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-sheet color="lighten-4" class="pa-4">
         <v-avatar class="mb-4" size="64" tile>
-          <img src="https://www.yunboys.cn/sjtx/api.php">
+<!--          <img src="https://www.yunboys.cn/sjtx/api.php">-->
+        <img :src="autorPic"/>
         </v-avatar>
         <div class="onekey">{{ oneKey }}</div>
       </v-sheet>
@@ -35,10 +36,10 @@
           <v-list-item to="/documents">
             <v-list-item-title>文章管理</v-list-item-title>
           </v-list-item>
-          <v-list-item to="category">
+          <v-list-item to="/category">
             <v-list-item-title>分类管理</v-list-item-title>
           </v-list-item>
-          <v-list-item to="">
+          <v-list-item to="/tags">
             <v-list-item-title>标签管理</v-list-item-title>
           </v-list-item>
         </v-list-group>
