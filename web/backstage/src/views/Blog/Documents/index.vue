@@ -30,7 +30,7 @@
 import fileTable from '@/views/Blog/Documents/components/fileTable'
 
 export default {
-  name: 'index',
+  name: 'Documents',
   data: () => ({
     items: ['123', '321'],
     typeList: ['1', '2']

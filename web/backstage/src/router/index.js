@@ -36,9 +36,9 @@ const routes = [
       component: () => import('../views/Blog/Documents/index.vue')
     }, {
       path: 'deditorcreate/:id',
-      name: 'EditorCreate',
+      name: 'DEditorCreate',
       meta: {
-        name: '编辑/新建',
+        name: '文章 编辑/新建',
         noCache: true
       },
       component: () => import('../views/Blog/Documents/editorcreate.vue')
@@ -58,6 +58,22 @@ const routes = [
         noCache: false
       },
       component: () => import('../views/Blog/Tags/index.vue')
+    }, {
+      path: 'consumer',
+      name: 'Consumer',
+      meta: {
+        name: '用户管理',
+        noCache: false
+      },
+      component: () => import('../views/Consumer/index.vue')
+    }, {
+      path: 'ceditorcreate/:id',
+      name: 'CEditorCreate',
+      meta: {
+        name: '用户 编辑/新建',
+        noCache: true
+      },
+      component: () => import('../views/Consumer/editorcreate.vue')
     }, {
       path: 'author',
       name: 'Author',

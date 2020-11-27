@@ -27,7 +27,7 @@
 import tagsTable from '@/views/Blog/Tags/components/tagsTable'
 
 export default {
-  name: 'index',
+  name: 'Tags',
   data: () => ({
     items: ['123', '321'],
     typeList: ['1', '2']

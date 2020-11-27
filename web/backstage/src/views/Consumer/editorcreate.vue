@@ -121,7 +121,7 @@ import singalUpload from '@/components/singalUpload'
 import richEditor from '@/components/richEditor'
 
 export default {
-  name: 'DEditorCreate',
+  name: 'CEditorCreate',
   data: () => ({
     form: {
       title: '',
@@ -138,9 +138,9 @@ export default {
   computed: {
     title: function () {
       if (this.$route.params.id === '-1') {
-        return '文章新建'
+        return '用户新建'
       } else {
-        return '文章编辑'
+        return '用户编辑'
       }
     }
   },

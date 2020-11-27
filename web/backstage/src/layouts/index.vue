@@ -10,8 +10,8 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-sheet color="lighten-4" class="pa-4">
         <v-avatar class="mb-4" size="64" tile>
-<!--          <img src="https://www.yunboys.cn/sjtx/api.php">-->
-        <img :src="autorPic"/>
+          <img src="https://www.yunboys.cn/sjtx/api.php">
+<!--        <img :src="autorPic"/>-->
         </v-avatar>
         <div class="onekey">{{ oneKey }}</div>
       </v-sheet>
@@ -44,21 +44,21 @@
           </v-list-item>
         </v-list-group>
 
-        <v-list-item to="/1">
+        <v-list-item to="/consumer">
           <v-list-item-icon>
             <v-icon>mdi-account-circle</v-icon>
           </v-list-item-icon>
           <v-list-item-title>用户管理</v-list-item-title>
         </v-list-item>
 
-        <v-list-item to="/2">
+        <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-toolbox</v-icon>
           </v-list-item-icon>
           <v-list-item-title>资源管理</v-list-item-title>
         </v-list-item>
 
-        <v-list-item to="/3">
+        <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-file-cog</v-icon>
           </v-list-item-icon>

@@ -8,7 +8,10 @@
     <v-container class="pt-6 px-6" fluid>
       <v-row align="center">
         <v-col cols="3">
-          <v-text-field label="分类名称" value="10.00"></v-text-field>
+          <v-text-field label="搜索名" value="10.00"></v-text-field>
+        </v-col>
+        <v-col cols="3">
+          <v-select label="状态" :items="items" value="123"></v-select>
         </v-col>
         <v-col cols="6">
           <v-btn color="primary" elevation="2" width="100">查询</v-btn>
@@ -16,7 +19,7 @@
       </v-row>
       <v-row>
         <v-col cols="12">
-          <category-table></category-table>
+          <consumer-table></consumer-table>
         </v-col>
       </v-row>
     </v-container>
@@ -24,10 +27,10 @@
 </template>
 
 <script>
-import categoryTable from '@/views/Blog/Category/components/categoryTable'
+import consumerTable from '@/views/Consumer/components/consumerTable'
 
 export default {
-  name: 'Category',
+  name: 'Consumer',
   data: () => ({
     items: ['123', '321'],
     typeList: ['1', '2']
@@ -35,7 +38,7 @@ export default {
   methods: {
   },
   components: {
-    categoryTable
+    consumerTable
   }
 }
 </script>
