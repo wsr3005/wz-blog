@@ -47,6 +47,7 @@ export default {
     handelClick (title) {
       if (title === '退出') {
         this.$router.push('/login')
+        this.$store.dispatch('tagsView/delAllViews')
       } else {
         this.$router.push('/author')
       }

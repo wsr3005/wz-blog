@@ -2,7 +2,12 @@
   <v-app id="backstage">
     <!--  header  -->
     <v-system-bar height="40" color="primary" app>
-      <h1 class="title">博客后台管理系统</h1>
+      <div class="header-left">
+        <v-btn icon color="primary" @click="drawer = true" v-if="!drawer">
+          <v-icon color="#fff">mdi-menu</v-icon>
+        </v-btn>
+        <span class="title">博客后台管理系统</span>
+      </div>
       <v-spacer></v-spacer>
       <b-menu></b-menu>
     </v-system-bar>
@@ -11,7 +16,7 @@
       <v-sheet color="lighten-4" class="pa-4">
         <v-avatar class="mb-4" size="64" tile>
           <img src="https://www.yunboys.cn/sjtx/api.php">
-<!--        <img :src="autorPic"/>-->
+          <!--        <img :src="autorPic"/>-->
         </v-avatar>
         <div class="onekey">{{ oneKey }}</div>
       </v-sheet>
@@ -87,7 +92,7 @@ export default {
   data: () => ({
     autorPic: null,
     oneKey: '',
-    drawer: null
+    drawer: true
   }),
   computed: {
     cachedViews () {
@@ -129,8 +134,10 @@ export default {
 <style lang="scss" scoped>
 
 #backstage {
-  .title {
-    margin-left: 5%;
+  .header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
     color: #fff;
   }
 
