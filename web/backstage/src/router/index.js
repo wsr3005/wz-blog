@@ -17,7 +17,7 @@ const routes = [
         noCache: false,
         affix: true
       },
-      component: () => import('../views/Home.vue')
+      component: () => import('../views/Home/Home.vue')
     }, {
       path: 'pagesetting',
       name: 'PageSetting',
