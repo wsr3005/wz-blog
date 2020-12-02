@@ -101,7 +101,7 @@
             <v-card :elevation="hover ? 16 : 2" :class="{ 'on-hover': hover }">
               <v-card-title>贡献值</v-card-title>
               <v-card-text>
-                <GitHubChart></GitHubChart>
+                <ContributionsChart></ContributionsChart>
               </v-card-text>
             </v-card>
           </v-hover>
@@ -140,7 +140,7 @@ import RoseChart from '@/views/Home/components/RoseChart'
 import WorlCloud from '@/views/Home/components/WorlCloud'
 import TimeList from '@/views/Home/components/TimeList'
 import TodoList from '@/views/Home/components/TodoList'
-import GitHubChart from '@/views/Home/components/GitHubChart'
+import ContributionsChart from '@/views/Home/components/ContributionsChart'
 
 export default {
   name: 'Home',
@@ -153,7 +153,7 @@ export default {
     WorlCloud,
     TimeList,
     TodoList,
-    GitHubChart
+    ContributionsChart
   }
 }
 </script>
