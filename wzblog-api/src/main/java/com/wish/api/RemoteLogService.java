@@ -1,7 +1,7 @@
 package com.wish.api;
 
 import com.wish.api.factory.RemoteLogFallbackFactory;
-import com.wish.api.pojo.SysLog;
+import com.wish.api.domain.SysLog;
 import com.wish.common.core.domain.W;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

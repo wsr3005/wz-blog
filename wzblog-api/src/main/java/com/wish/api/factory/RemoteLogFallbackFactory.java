@@ -1,7 +1,7 @@
 package com.wish.api.factory;
 
 import com.wish.api.RemoteLogService;
-import com.wish.api.pojo.SysLog;
+import com.wish.api.domain.SysLog;
 import com.wish.common.core.domain.W;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
