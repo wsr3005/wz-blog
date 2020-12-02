@@ -47,6 +47,9 @@
           <v-list-item to="/tags">
             <v-list-item-title>标签管理</v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title>评论管理</v-list-item-title>
+          </v-list-item>
         </v-list-group>
 
         <v-list-item to="/consumer">
@@ -63,12 +66,25 @@
           <v-list-item-title>资源管理</v-list-item-title>
         </v-list-item>
 
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon>mdi-file-cog</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>操作日志</v-list-item-title>
-        </v-list-item>
+        <v-list-group
+          prepend-icon="mdi-file-cog"
+          color=""
+          no-action
+        >
+          <template v-slot:activator>
+            <v-list-item-title>日志管理</v-list-item-title>
+          </template>
+
+          <v-list-item>
+            <v-list-item-title>操作日志</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>用户日志</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>异常日志</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
 
       </v-list>
     </v-navigation-drawer>
