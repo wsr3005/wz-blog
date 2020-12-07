@@ -1,8 +1,7 @@
 package com.wish.common.log.aspect;
 
 import com.alibaba.fastjson.JSON;
-import com.wish.api.RemoteLogService;
-import com.wish.api.pojo.SysLog;
+import com.wish.api.domain.SysLog;
 import com.wish.common.core.constant.CacheConstants;
 import com.wish.common.core.utils.ServletUtils;
 import com.wish.common.core.utils.ip.IpUtils;

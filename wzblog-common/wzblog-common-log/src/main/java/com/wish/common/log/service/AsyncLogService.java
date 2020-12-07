@@ -1,7 +1,7 @@
 package com.wish.common.log.service;
 
 import com.wish.api.RemoteLogService;
-import com.wish.api.pojo.SysLog;
+import com.wish.api.domain.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

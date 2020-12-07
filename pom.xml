@@ -13,6 +13,7 @@
         <module>wzblog-common/wzblog-common-core</module>
         <module>wzblog-common/wzblog-common-redis</module>
         <module>wzblog-api</module>
+        <module>wzblog-auth</module>
     </modules>
 
     <properties>
@@ -27,11 +28,14 @@
         <poi.version>4.1.2</poi.version>
         <swagger.core.version>2.1.5</swagger.core.version>
         <lombok.version>1.18.16</lombok.version>
-        
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- com.wish.common -->
             <!-- SpringCloud 微服务 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -40,21 +44,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <!-- Apache Commons Pool2 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>${common-pool.version}</version>
             </dependency>
-
             <!-- Pagehelper -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.boot.version}</version>
             </dependency>
-
             <!-- SpringBoot 依赖配置 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -63,86 +64,98 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <!-- JSON 解析器和生成器 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
             <!-- io常用工具类 -->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
             </dependency>
-
             <!-- 文件上传工具类 -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons.fileupload.version}</version>
             </dependency>
-
             <!-- excel工具 -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
                 <version>${swagger.core.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
 <!--                <scope>provided</scope>-->
             </dependency>
-
             <!-- WzBlog Common Core-->
             <dependency>
                 <groupId>com.wish</groupId>
                 <artifactId>wzblog-common-core</artifactId>
                 <version>${wzblog.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.wish</groupId>
                 <artifactId>wzblog-common-swagger</artifactId>
                 <version>${wzblog.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.wish</groupId>
                 <artifactId>wzblog-common-security</artifactId>
                 <version>${wzblog.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.wish</groupId>
                 <artifactId>wzblog-common-log</artifactId>
                 <version>${wzblog.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.wish</groupId>
                 <artifactId>wzblog-common-redis</artifactId>
                 <version>${wzblog.version}</version>
-            </dependency>
-            
+            </dependency>            
             <dependency>
                 <groupId>com.wish</groupId>
                 <artifactId>wzblog-api</artifactId>
                 <version>${wzblog.version}</version>
             </dependency>
+
+            <!-- com.wish.auth -->
+            <!-- SpringCloud Alibaba 微服务 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     
 </project>

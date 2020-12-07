@@ -1,4 +1,4 @@
-package com.wish.api.pojo;
+package com.wish.api.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
