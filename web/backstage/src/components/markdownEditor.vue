@@ -3,7 +3,7 @@
     :initialValue="editorText"
     :options="editorOptions"
     height="500px"
-    initialEditType="wysiwyg"
+    initialEditType="markdown"
     previewStyle="vertical"
   />
 </template>
@@ -26,7 +26,7 @@ export default {
       useCommandShortcut: true,
       useDefaultHTMLSanitizer: true,
       usageStatistics: false,
-      hideModeSwitch: false,
+      hideModeSwitch: true,
       toolbarItems: [
         'heading',
         'bold',

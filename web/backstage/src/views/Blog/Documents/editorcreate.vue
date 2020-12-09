@@ -90,12 +90,7 @@
           <v-subheader>文章内容</v-subheader>
         </v-col>
         <v-col cols="11">
-          <v-radio-group v-model="form.contentType" mandatory row dense>
-            <v-radio label="markdown" value="1"></v-radio>
-            <v-radio label="富文本" value="2"></v-radio>
-          </v-radio-group>
-          <rich-editor ref="richeditor" v-if="form.contentType == 2"></rich-editor>
-          <markdown-editor v-else></markdown-editor>
+          <markdown-editor></markdown-editor>
         </v-col>
       </v-row>
       <div class="button-display">
@@ -123,7 +118,6 @@
 
 <script>
 import singalUpload from '@/components/singalUpload'
-import richEditor from '@/components/richEditor'
 import markdownEditor from '@/components/markdownEditor'
 
 export default {
@@ -136,7 +130,6 @@ export default {
       autor: '',
       tags: '',
       picUrl: '',
-      contentType: '',
       richText: ''
     },
     richEditor: null,
@@ -161,7 +154,6 @@ export default {
   },
   components: {
     singalUpload,
-    richEditor,
     markdownEditor
   }
 }

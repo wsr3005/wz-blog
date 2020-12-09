@@ -118,7 +118,6 @@
 
 <script>
 import singalUpload from '@/components/singalUpload'
-import richEditor from '@/components/richEditor'
 
 export default {
   name: 'CEditorCreate',
@@ -153,8 +152,7 @@ export default {
     }
   },
   components: {
-    singalUpload,
-    richEditor
+    singalUpload
   }
 }
 </script>
