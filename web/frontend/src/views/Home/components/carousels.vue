@@ -1,11 +1,12 @@
 <template>
-  <v-carousel v-model="model" cycle delimiter-icon="mdi-minus" hide-delimiter-background show-arrows-on-hover>
-    <v-carousel-item v-for="(pic, i) in pics" :key="i">
+  <v-carousel class="rounded-lg" height="600" v-model="model" cycle delimiter-icon="mdi-heart" hide-delimiter-background
+              show-arrows-on-hover>
+    <v-carousel-item v-for="(pic, i) in pics" :key="i" @click.native="handleClick(i)" style="cursor: pointer">
       <div>
         <div class="carousels-title">
-          <span class="title1">{{ pic.title }}</span>
+          <span>{{ pic.title }}</span>
         </div>
-        <v-img :src="pic.cover" contain></v-img>
+        <v-img class="images" :src="pic.cover" width="100%" height="600"></v-img>
       </div>
     </v-carousel-item>
   </v-carousel>
@@ -43,11 +44,18 @@ export default {
         cover: require('../../../assets/images/6.jpg')
       }
     ]
-  })
+  }),
+  methods: {
+    handleClick (index) {
+      alert('wyq的老婆' + index)
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/styles/tools.scss";
+
 .carousels-title {
   display: flex;
   flex-direction: column;
@@ -61,6 +69,10 @@ export default {
     font-size: 35px;
     font-weight: 500;
   }
+}
+
+.images {
+  @include image-hover
 }
 
 </style>

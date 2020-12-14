@@ -1,0 +1,10 @@
+@mixin image-hover {
+  &:hover{
+    transform: scale(1.05, 1.05);
+    transition-duration: 0.6s;
+    transition-timing-function: linear;
+  }
+  &:not(hover){
+    transition-duration: 0.6s;
+  }
+}
