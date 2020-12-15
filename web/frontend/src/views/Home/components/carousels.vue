@@ -1,13 +1,11 @@
 <template>
-  <v-carousel class="rounded-lg" height="600" v-model="model" cycle delimiter-icon="mdi-heart" hide-delimiter-background
+  <v-carousel class="rounded-lg" height="600" v-model="model" cycle hide-delimiter-background hide-delimiters
               show-arrows-on-hover>
     <v-carousel-item v-for="(pic, i) in pics" :key="i" @click.native="handleClick(i)" style="cursor: pointer">
-      <div>
-        <div class="carousels-title">
-          <span>{{ pic.title }}</span>
-        </div>
-        <v-img class="images" :src="pic.cover" width="100%" height="600"></v-img>
+      <div class="carousels-title">
+        <span>{{ pic.title }}</span>
       </div>
+      <v-img class="images" :src="pic.cover" width="100%" height="600"></v-img>
     </v-carousel-item>
   </v-carousel>
 </template>
