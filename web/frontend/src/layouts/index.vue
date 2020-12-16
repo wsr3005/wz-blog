@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <headers></headers>
+    <vheader></vheader>
     <v-main class="grey lighten-3">
       <router-view/>
     </v-main>
@@ -10,11 +10,11 @@
 
 <script>
 import backToTop from '@/components/backToTop'
-import headers from '@/layouts/header'
+import vheader from '@/layouts/header'
 export default {
   name: 'layouts',
   components: {
-    headers,
+    vheader,
     backToTop
   }
 }
@@ -29,9 +29,22 @@ html {
   min-width: 1200px;
 }
 
-.header-title-item {
-  font-size: 15px;
-  color: black;
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
 }
 
 </style>

@@ -1,41 +1,50 @@
 <template>
-  <v-container fluid id="home">
+  <v-container fluid id="article">
     <v-row>
       <v-col cols="12">
-        <carousels></carousels>
+        <v-card class="mx-auto" rounded="lg">
+          <v-card-title>搜索文章</v-card-title>
+          <v-card-text class="search">
+            <v-text-field dense
+                          outlined
+                          placeholder="搜索"
+                          hide-details
+                          @keypress.enter.native="handleClick"
+                          v-model="searchText">
+              <v-icon slot="append" color="red" style="cursor: pointer" @click.native="handleClick">
+                mdi-magnify
+              </v-icon>
+            </v-text-field>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12">
+        <v-card class="mx-auto" rounded="lg">
+          <v-card-text class="filter">
+            <div>
+              <span>分类：</span>
+              <div class=""></div>
+            </div>
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="8">
-        <v-row>
-          <v-col cols="4" class="pt-0 mt-0">
-            <file-tags ref="fileTags"></file-tags>
-          </v-col>
-          <v-col cols="8" class="pt-0 mt-0">
-            <last-visitor ref="lastVisitor"></last-visitor>
-          </v-col>
-          <v-col cols="12" v-for="(file, index) in fileList" :key="index">
-            <file-list :file="file"></file-list>
-          </v-col>
-        </v-row>
-      </v-col>
-      <v-col cols="4">
-        <todo-list></todo-list>
+    <v-row dense no-gutters class="rounded-lg">
+      <v-col cols="12" v-for="(file, index) in fileList" :key="index">
+        <file-list :file="file"></file-list>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import carousels from '@/views/Home/components/carousels'
-import fileList from '@/views/Home/components/fileList'
-import fileTags from '@/views/Home/components/fileTags'
-import lastVisitor from '@/views/Home/components/lastVisitor'
-import todoList from '@/views/Home/components/todoList'
+import fileList from '@/views/Article/components/fileList'
 
 export default {
-  name: 'Home',
+  name: 'index',
   data: () => ({
+    searchText: '',
     fileList: [{
       title: 'wyq真帅',
       createTime: '2020.12.15',
@@ -73,24 +82,31 @@ export default {
       dres: '呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜~'
     }]
   }),
-  mounted () {
-    const height = Math.max(this.$refs.fileTags.$el.clientHeight, this.$refs.lastVisitor.$el.clientHeight)
-    this.$refs.fileTags.$el.style.height = height + 'px'
-    this.$refs.lastVisitor.$el.style.height = height + 'px'
+  methods: {
+    handleClick () {
+      alert('123')
+    }
   },
   components: {
-    carousels,
-    fileList,
-    fileTags,
-    lastVisitor,
-    todoList
+
+    fileList
+
   }
 }
 </script>
 
-<style scoped>
-#home {
+<style lang="scss" scoped>
+#article {
   width: 1200px;
   margin: 0 auto;
+
+  .search {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .filter{
+
+  }
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <v-sheet rounded="lg">
-    <v-card class="mx-auto">
+    <v-card class="mx-auto" rounded="lg">
       <div style="overflow: hidden" @click="handelClick">
         <v-img class="images" width="100%" height="300px" :src="file.coverUrl"></v-img>
         <v-card-title class="titles white--text">{{ file.title }}</v-card-title>
@@ -24,7 +23,6 @@
         </div>
       </v-card-actions>
     </v-card>
-  </v-sheet>
 </template>
 
 <script>
@@ -41,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/styles/tools.scss";
+@import "../../../assets/styles/tools";
 
 .images {
   @include image-hover;
