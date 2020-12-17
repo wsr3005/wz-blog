@@ -5,17 +5,20 @@
       <router-view/>
     </v-main>
     <backToTop></backToTop>
+    <music-play></music-play>
   </v-app>
 </template>
 
 <script>
 import backToTop from '@/components/backToTop'
 import vheader from '@/layouts/header'
+import musicPlay from '@/components/musicPlay'
 export default {
   name: 'layouts',
   components: {
     vheader,
-    backToTop
+    backToTop,
+    musicPlay
   }
 }
 </script>

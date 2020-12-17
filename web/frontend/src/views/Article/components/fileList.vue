@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="mx-auto file-list-border" rounded="0" height="300">
+  <v-card class="mx-auto" rounded="lg" height="300">
     <v-card-title class="black--text">{{ file.title }}</v-card-title>
     <v-card-subtitle class="pb-0">2020.12.15</v-card-subtitle>
     <v-row dense no-gutters>
@@ -50,10 +50,6 @@ export default {
 .images {
   @include image-hover;
   cursor: pointer;
-}
-
-.file-list-border {
-  border-top: 1px solid #e8eaec;
 }
 
 .titles {

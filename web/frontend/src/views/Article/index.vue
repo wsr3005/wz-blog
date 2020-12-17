@@ -4,33 +4,49 @@
       <v-col cols="12">
         <v-card class="mx-auto" rounded="lg">
           <v-card-title>搜索文章</v-card-title>
-          <v-card-text class="search">
-            <v-text-field dense
-                          outlined
-                          placeholder="搜索"
-                          hide-details
-                          @keypress.enter.native="handleClick"
-                          v-model="searchText">
-              <v-icon slot="append" color="red" style="cursor: pointer" @click.native="handleClick">
-                mdi-magnify
-              </v-icon>
-            </v-text-field>
+          <v-card-text>
+
+            <v-row class="search">
+              <v-text-field dense
+                            outlined
+                            placeholder="搜索"
+                            hide-details
+                            @keypress.enter.native="handleClick"
+                            v-model="searchText">
+                <v-icon slot="append" color="red" style="cursor: pointer" @click.native="handleClick">
+                  mdi-magnify
+                </v-icon>
+              </v-text-field>
+            </v-row>
+
+            <v-row no-gutters align="center">
+              <v-col cols="1">
+                <div class="filter-text">分类：</div>
+              </v-col>
+              <v-col cols="11">
+                <v-chip-group show-arrows mandatory multiple active-class="primary">
+                  <v-chip label v-for="tag in tags" :key="tag">{{ tag }}</v-chip>
+                </v-chip-group>
+              </v-col>
+            </v-row>
+
+            <v-row no-gutters align="center">
+              <v-col cols="1">
+                <div class="filter-text">分类：</div>
+              </v-col>
+              <v-col cols="11">
+                <v-chip-group show-arrows mandatory multiple active-class="primary">
+                  <v-chip label v-for="tag in tags" :key="tag">{{ tag }}</v-chip>
+                </v-chip-group>
+              </v-col>
+            </v-row>
+
           </v-card-text>
         </v-card>
       </v-col>
 
-      <v-col cols="12">
-        <v-card class="mx-auto" rounded="lg">
-          <v-card-text class="filter">
-            <div>
-              <span>分类：</span>
-              <div class=""></div>
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-col>
     </v-row>
-    <v-row dense no-gutters class="rounded-lg">
+    <v-row>
       <v-col cols="12" v-for="(file, index) in fileList" :key="index">
         <file-list :file="file"></file-list>
       </v-col>
@@ -45,6 +61,9 @@ export default {
   name: 'index',
   data: () => ({
     searchText: '',
+    tags: [
+      'web前端', 'java基础', 'springboot', 'vue'
+    ],
     fileList: [{
       title: 'wyq真帅',
       createTime: '2020.12.15',
@@ -105,8 +124,10 @@ export default {
     margin: 0 auto;
   }
 
-  .filter{
-
+  .filter-text {
+    font-size: 14px;
+    color: black;
+    text-align: center;
   }
 }
 </style>
