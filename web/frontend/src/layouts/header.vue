@@ -36,19 +36,19 @@ export default {
   data: () => ({
     links: [{
       title: '首页',
-      url: 'home'
+      url: '/home'
     }, {
       title: '文章',
-      url: 'article'
+      url: '/article'
     }, {
       title: '归档',
-      url: 'home'
+      url: '/filing'
     }, {
       title: '留言',
-      url: 'home'
+      url: '/home'
     }, {
       title: '作者',
-      url: 'home'
+      url: '/home'
     }],
     title: 'wyq-blog',
     solo: true,

@@ -15,7 +15,7 @@
       </v-col>
     </v-row>
     <v-card-actions class="d-flex justify-space-between">
-      <v-btn color="orange" text>开始阅读</v-btn>
+      <v-btn color="orange" text @click="handelClick">开始阅读</v-btn>
       <div>
         <v-btn icon color="deep-orange">
           <v-icon>mdi-thumb-up</v-icon>
@@ -38,7 +38,7 @@ export default {
   data: () => ({}),
   methods: {
     handelClick () {
-      alert(123)
+      this.$router.push(`/articledetails/${this.file.id}`)
     }
   }
 }

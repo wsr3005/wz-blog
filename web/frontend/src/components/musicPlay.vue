@@ -1,5 +1,5 @@
 <template>
-  <aplayer autoplay
+  <aplayer
            listFolded
            :list="list"
            :music="{

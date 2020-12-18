@@ -1,7 +1,7 @@
 <template>
   <v-sheet rounded="lg">
     <div class="titles">文章标签</div>
-    <v-chip-group column class="pa-4 pt-0">
+    <v-chip-group column class="pa-4 ">
       <v-chip v-for="(tag, index) in tags" :color="colorList[Math.floor((Math.random()*colorList.length))]" text-color="white" :key="index">
         {{ tag }}
       </v-chip>
@@ -44,6 +44,8 @@ export default {
   color: black;
   font-size: 18px;
   font-weight: bolder;
-  padding: 10px;
+  padding: 10px 0 10px 0;
+  margin:0 10px 0 10px;
+  border-bottom: 1px solid #e8e9e7;
 }
 </style>

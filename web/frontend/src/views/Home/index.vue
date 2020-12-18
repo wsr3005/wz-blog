@@ -31,7 +31,7 @@ import carousels from '@/views/Home/components/carousels'
 import fileList from '@/views/Home/components/fileList'
 import fileTags from '@/views/Home/components/fileTags'
 import lastVisitor from '@/views/Home/components/lastVisitor'
-import todoList from '@/views/Home/components/todoList'
+import todoList from '@/views/Home/components/fileRecommend'
 
 export default {
   name: 'Home',
