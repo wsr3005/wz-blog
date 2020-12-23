@@ -9,8 +9,8 @@
         </v-card-text>
       </v-col>
       <v-col cols="4">
-        <div style="overflow: hidden" @click="handelClick">
-          <v-img class="images" width="90%" height="180px" :src="file.coverUrl"></v-img>
+        <div style="overflow: hidden;width: 90%" class="rounded-lg" @click="handelClick">
+          <v-img class="images" width="100%" height="180px" :src="file.coverUrl"></v-img>
         </div>
       </v-col>
     </v-row>

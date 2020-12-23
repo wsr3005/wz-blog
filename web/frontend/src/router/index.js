@@ -29,6 +29,16 @@ const routes = [
         path: 'filing',
         name: 'Filing',
         component: () => import('../views/Filing/index')
+      },
+      {
+        path: 'message',
+        name: 'Message',
+        component: () => import('../views/Message/index')
+      },
+      {
+        path: 'author',
+        name: 'Author',
+        component: () => import('../views/Author/index')
       }
     ]
   },

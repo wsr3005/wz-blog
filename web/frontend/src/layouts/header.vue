@@ -1,29 +1,35 @@
 <template>
-  <v-system-bar flat color="white" height="50" min-width="1200px">
+  <v-system-bar app lights-out color="red" height="50" min-width="1200px">
 
-    <div class="header-blog-title">{{ title }}</div>
+    <v-col xs="0" sm="0" md="0" lg="3" xl="3" class="d-none d-lg-flex">
+      <div class="header-blog-title">{{ title }}</div>
+    </v-col>
 
-    <v-tabs centered color="grey darken-1" height="50">
-      <v-tab v-for="(link, index) in links" :to="link.url" :key="index"><span class="header-title-item">{{
-          link.title
-        }}</span></v-tab>
-    </v-tabs>
+    <v-col xs="8" sm="8" md="8" lg="6" xl="6">
+      <v-tabs centered color="grey darken-1" background-color="transparent" height="50">
+        <v-tab v-for="(link, index) in links" :to="link.url" :key="index"><span class="header-title-item">{{
+            link.title
+          }}</span></v-tab>
+      </v-tabs>
+    </v-col>
 
-    <div class="header-login">
-      <v-text-field dense
-                    :solo="solo"
-                    flat
-                    placeholder="搜索"
-                    hide-details
-                    @focus="handleFocus"
-                    @blur="handleBlur"
-                    @keypress.enter.native="handleClick"
-                    v-model="searchText">
-        <v-icon slot="append" color="red" style="cursor: pointer" @click.native="handleClick">
-          mdi-magnify
-        </v-icon>
-      </v-text-field>
-    </div>
+    <v-col xs="4" sm="4" md="4" lg="3" xl="3">
+      <div class="header-blog-login">
+        <v-text-field dense
+                      :solo="solo"
+                      flat
+                      placeholder="搜索"
+                      hide-details
+                      @focus="handleFocus"
+                      @blur="handleBlur"
+                      @keypress.enter.native="handleClick"
+                      v-model="searchText">
+          <v-icon slot="append" color="red" style="cursor: pointer" @click.native="handleClick">
+            mdi-magnify
+          </v-icon>
+        </v-text-field>
+      </div>
+    </v-col>
 
     <!--      <v-avatar class="hidden-sm-and-down" color="grey darken-1 shrink" size="32"></v-avatar>-->
 
@@ -45,10 +51,10 @@ export default {
       url: '/filing'
     }, {
       title: '留言',
-      url: '/home'
+      url: '/message'
     }, {
       title: '作者',
-      url: '/home'
+      url: '/author'
     }],
     title: 'wyq-blog',
     solo: true,
@@ -72,21 +78,14 @@ export default {
 <style scoped>
 
 .header-blog-title {
-  width: 400px;
   color: black;
   font-size: 23px;
   font-weight: 500;
-  margin-left: 8%;
+  margin: 0 auto;
 }
 
-.header-login {
-  width: 400px;
-  margin-right: 8%;
+.header-blog-login {
+  width: 70%;
+  margin: 0 auto
 }
-
-.header-title-item {
-  font-size: 15px;
-  color: black;
-}
-
 </style>
