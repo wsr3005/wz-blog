@@ -1,8 +1,8 @@
 <template>
-  <v-app id="inspire">
-    <vheader></vheader>
+  <v-app id="inspire" v-scroll="onScroll">
+    <vheader  v-bind:offsetTop=offsetTop></vheader>
     <v-main class="grey lighten-3">
-      <router-view/>
+      <router-view />
     </v-main>
     <backToTop></backToTop>
     <music-play></music-play>
@@ -15,6 +15,14 @@ import vheader from '@/layouts/header'
 import musicPlay from '@/components/musicPlay'
 export default {
   name: 'layouts',
+  data: () => ({
+    offsetTop: document.body.scrollTop
+  }),
+  methods: {
+    onScroll () {
+      this.offsetTop = window.pageYOffset
+    }
+  },
   components: {
     vheader,
     backToTop,
@@ -23,7 +31,6 @@ export default {
 }
 </script>
 <style>
-
 html {
   overflow: auto;
 }
@@ -32,22 +39,18 @@ html {
   min-width: 1200px;
 }
 
-::-webkit-scrollbar-track
-{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #F5F5F5;
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background-color: #000000;
 }
-
 </style>

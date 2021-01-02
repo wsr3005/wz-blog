@@ -1,10 +1,10 @@
 <template>
   <v-container fluid id="home">
-    <v-row>
+    <!-- <v-row>
       <v-col cols="12">
         <carousels></carousels>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row>
       <v-col cols="8">
         <v-row>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import carousels from '@/views/Home/components/carousels'
+// import carousels from '@/views/Home/components/carousels'
 import fileList from '@/views/Home/components/fileList'
 import fileTags from '@/views/Home/components/fileTags'
 import lastVisitor from '@/views/Home/components/lastVisitor'
@@ -125,7 +125,7 @@ export default {
     }
   },
   components: {
-    carousels,
+    // carousels,
     fileList,
     fileTags,
     lastVisitor,
