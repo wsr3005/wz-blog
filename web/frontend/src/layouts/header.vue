@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import { getOneKey } from '../api'
 export default {
   name: 'header',
   props: ['offsetTop'],
@@ -81,7 +82,15 @@ export default {
     isActiveNav: 0,
     searchText: ''
   }),
+  created () {
+    this.getOneKey()
+  },
   methods: {
+    async getOneKey () {
+      this.headerText = (await getOneKey({
+        c: 'i'
+      })).hitokoto
+    },
     search () {
       alert(this.searchText)
     },
@@ -155,7 +164,8 @@ export default {
     position: relative;
     top: 50%;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
+    letter-spacing: 3px;
   }
 }
 </style>

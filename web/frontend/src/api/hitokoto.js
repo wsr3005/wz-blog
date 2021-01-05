@@ -1,13 +1,49 @@
 import axios from 'axios'
 
-export function getHikoto () {
-  axios.get('https://v1.hitokoto.cn/').then((res) => {
-    console.log('毋意，毋必，毋固，毋我。')
-    return '毋意，毋必，毋固，毋我。'
-  // if (res.status === 200) {
-    //   return res.data.hitokoto
-    // } else {
-    //   return '毋意，毋必，毋固，毋我。'
-    // }
-  })
+const instance = axios.create({
+  baseURL: 'https://v1.hitokoto.cn/',
+  timeout: 2500
+})
+
+// 添加请求拦截器
+instance.interceptors.request.use(function (config) {
+  // 在发送请求之前做些什么
+  return config
+}, function (error) {
+  // 对请求错误做些什么
+  return Promise.reject(error)
+})
+
+// 添加响应拦截器
+instance.interceptors.response.use(function (response) {
+  // 对响应数据做点什么
+  if (response.status === 200) {
+    return response.data
+  }
+  return response
+}, function (error) {
+  // 对响应错误做点什么
+  return Promise.reject(error)
+})
+
+export default function ajax (url, data, type) {
+  if (type.toLowerCase() === 'get') {
+    return instance({
+      method: 'get',
+      url: url,
+      params: data
+    })
+  } else if (type.toLowerCase() === 'post') {
+    return instance({
+      method: 'post',
+      url: url,
+      params: data
+    })
+  } else {
+    return instance({
+      method: type.toLowerCase(),
+      url: url,
+      params: data
+    })
+  }
 }
